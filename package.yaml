@@ -1,0 +1,71 @@
+name: typespec
+version: 0.1
+synopsis: Generate TypeSpec definitions from Haskell types
+description: Generate TypeSpec definitions from Haskell types
+maintainer: tadfisher <tadfisher@gmail.com>
+github: MercuryTechnologies/typespec-hs
+category: Web, Codegen, Text, TemplateHaskell
+# extra-source-files:
+  # - CHANGELOG.md
+  # - README.md
+
+ghc-options: -Wall
+
+default-extensions:
+  - LambdaCase
+  - OverloadedRecordDot
+  - OverloadedStrings
+  - RecordWildCards
+
+dependencies:
+  - Earley
+  - array
+  - base
+  - containers
+  - filepath
+  - generic-lens
+  - insert-ordered-containers
+  - lens
+  - megaparsec
+  - mtl
+  - parser-combinators
+  - prettyprinter
+  - prettyprinter-ansi-terminal
+  - safe-exceptions
+  - scientific
+  - string-interpolate
+  - template-haskell
+  - text
+  - unordered-containers
+
+build-tools:
+  - alex > 3.4 && < 4
+  - happy
+  - hspec-discover
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Language.TypeSpec.Compiler
+    - Language.TypeSpec.Parser
+    - Language.TypeSpec.Syntax
+
+# tests:
+#   spec:
+#     main: Spec.hs
+#     source-dirs:
+#       - test
+#       - src
+#     dependencies:
+#       - hspec
+#       - hspec-golden
+#       - hspec-discover
+#     default-extensions:
+#       - AllowAmbiguousTypes
+#       - DataKinds
+#       - ScopedTypeVariables
+#       - TemplateHaskell
+#       - TypeApplications
+#     ghc-options:
+#       -Wno-unused-top-binds
+#       -haddock

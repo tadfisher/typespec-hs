@@ -1,0 +1,67 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.36.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           typespec
+version:        0.1
+synopsis:       Generate TypeSpec definitions from Haskell types
+description:    Generate TypeSpec definitions from Haskell types
+category:       Web, Codegen, Text, TemplateHaskell
+homepage:       https://github.com/MercuryTechnologies/typespec-hs#readme
+bug-reports:    https://github.com/MercuryTechnologies/typespec-hs/issues
+maintainer:     tadfisher <tadfisher@gmail.com>
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/MercuryTechnologies/typespec-hs
+
+library
+  exposed-modules:
+      Language.TypeSpec.Compiler
+      Language.TypeSpec.Parser
+      Language.TypeSpec.Syntax
+  other-modules:
+      Language.TypeSpec.Compiler.Extension
+      Language.TypeSpec.Parser.Lexer
+      Language.TypeSpec.Parser.Location
+      Language.TypeSpec.Parser.Parser
+      Language.TypeSpec.Syntax.Extension
+      Language.TypeSpec.Syntax.Types
+      Paths_typespec
+  hs-source-dirs:
+      src
+  default-extensions:
+      LambdaCase
+      OverloadedRecordDot
+      OverloadedStrings
+      RecordWildCards
+  ghc-options: -Wall
+  build-tools:
+      alex >3.4 && <4
+    , happy
+  build-tool-depends:
+      hspec-discover:hspec-discover
+  build-depends:
+      Earley
+    , array
+    , base
+    , containers
+    , filepath
+    , generic-lens
+    , insert-ordered-containers
+    , lens
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , safe-exceptions
+    , scientific
+    , string-interpolate
+    , template-haskell
+    , text
+    , unordered-containers
+  default-language: Haskell2010
